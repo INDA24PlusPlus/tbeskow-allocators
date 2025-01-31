@@ -100,7 +100,27 @@ void free(void* pointer, size_t size){
 int main() {
     cin.tie(0)->sync_with_stdio(0);
 
-
+    int* numbers = (int*)alloc(5 * sizeof(int), alignof(int));
+    for(int i = 0; i < 5; i++) {
+        numbers[i] = i + 1;
+    }
+    
+    for(int i = 0; i < 5; i++) {
+        cout << numbers[i] << " ";
+    }
+    cout << endl;
+    
+    reset();
+    
+    double* doubles = (double*)alloc(3 * sizeof(double), alignof(double));
+    for(int i = 0; i < 3; i++) {
+        doubles[i] = i + 0.5;
+    }
+    
+    for(int i = 0; i < 3; i++) {
+        cout << doubles[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }
